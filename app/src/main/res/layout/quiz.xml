@@ -148,7 +148,7 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1994" />
+                    android:text="1997" />
 
                 <!-- Opción 2 -->
                 <RadioButton
@@ -160,7 +160,7 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1997" />
+                    android:text="1994" />
 
             </RadioGroup>
 

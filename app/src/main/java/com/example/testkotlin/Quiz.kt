@@ -25,7 +25,6 @@ class Quiz : AppCompatActivity() {
 
         checkAnswerButton.setOnClickListener {
             var correctCount = 0
-            var answerCount = 0
             for (i in 0 until questionsContainer.childCount) {
                 val child = questionsContainer.getChildAt(i)
                 if (child is RadioGroup) {
@@ -34,14 +33,13 @@ class Quiz : AppCompatActivity() {
                         val radioButton = child.getChildAt(j)
                         if (radioButton is RadioButton && radioButton.isChecked) {
                             // Obtiene la opción seleccionada
-                            val selectedOptionss = child.findViewById<RadioButton>(child.checkedRadioButtonId)
+                            val selectedOptions = child.findViewById<RadioButton>(child.checkedRadioButtonId)
                             // Obtiene la posición de la opción seleccionada
-                            val selectedPosition = child.indexOfChild(selectedOptionss)
-                            if (selectedPosition == correctAnswers[answerCount]) {
+                            val selectedPosition = child.indexOfChild(selectedOptions)
+                            val preguntaNumero = (i / 2) // Calcula el número de la pregunta (sumamos 1 porque la pregunta 1 está en el índice 0)
+                            if (selectedPosition == correctAnswers[preguntaNumero-1]) {
                                 correctCount++
                             }
-                            answerCount++
-
                         }
                     }
                 }
